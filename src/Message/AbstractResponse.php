@@ -32,7 +32,7 @@ abstract class AbstractResponse extends \Omnipay\Common\Message\AbstractResponse
             );
         }
     
-        return 'Error';
+        return '';
     }
 
     /**
