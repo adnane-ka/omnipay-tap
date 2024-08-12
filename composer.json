@@ -22,15 +22,16 @@
             "email": "dannykadri0@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
+    "prefer-stable": true,
     "require": {
         "omnipay/common": "^3.3",
-        "symfony/http-client": "7.2.x-dev",
-        "php-http/httplug": "2.x-dev",
-        "nyholm/psr7": "^1.8@dev",
-        "php-http/curl-client": "2.x-dev",
-        "guzzlehttp/psr7": "3.0.x-dev",
-        "php-http/message": "1.x-dev"
+        "symfony/http-client": "^6.2",   
+        "php-http/httplug": "^2.3",       
+        "nyholm/psr7": "^1.8",            
+        "php-http/curl-client": "^2.1",   
+        "guzzlehttp/psr7": "^2.4",        
+        "php-http/message": "^1.0"
     },
     "config": {
         "allow-plugins": {
