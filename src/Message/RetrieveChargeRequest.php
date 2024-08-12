@@ -11,16 +11,16 @@ class RetrieveChargeRequest extends AbstractRequest{
     /**
      * @return self
     */
-    public function setChargeId($value)
+    public function setTapId($value)
     {
-        return $this->setParameter('charge_id', $value);
+        return $this->setParameter('tap_id', $value);
     }
 
     /**
      * @return array
     */
     public function getData(){
-        $this->validate('charge_id');
+        $this->validate('tap_id');
     }
 
     /**
@@ -28,7 +28,7 @@ class RetrieveChargeRequest extends AbstractRequest{
     */
     public function sendData($data)
     {
-        $httpResponse = $this->createHttpRequest('GET', $this->endPoint.'/'.$this->getParameter('charge_id'), $data);
+        $httpResponse = $this->createHttpRequest('GET', $this->endPoint.'/'.$this->getParameter('tap_id'));
 
         return new RetrieveChargeResponse($this, $httpResponse->getBody()->getContents());
     }

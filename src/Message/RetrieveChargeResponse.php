@@ -8,7 +8,7 @@ class RetrieveChargeResponse extends AbstractResponse{
     */
     public function isSuccessful()
     {
-        return $this->getRawResponse()['status'] == 'CAPTURED';
+        return isset($this->getRawResponse()['status']) && ($this->getRawResponse()['status']  == 'CAPTURED');
     }
 
     /**
@@ -31,6 +31,10 @@ class RetrieveChargeResponse extends AbstractResponse{
      * @return string
     */
     public function getTransactionReference(){
-        return $this->getRawResponse()['reference']['payment'];
+        if (isset($this->getRawResponse()['reference']['payment'])) {
+            return $this->getRawResponse()['reference']['payment'];
+        }
+        
+        return '';
     }
 }

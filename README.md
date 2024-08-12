@@ -46,13 +46,13 @@ $gateway->setApiToken('sk_test_XKokBfNWv6FIYuTMg5sLPjhJ');
 ### Creating a charge
 ```php
 $response = $gateway->purchase([
-    'amount' => 1,
-    'currency' => 'KWD', 
-    'customerName' => 'Test',
-    'customerEmail' => 'test@test.com',
-    'sourceId' => 'src_all',  //  alowed source IDs: @see https://developers.tap.company/reference/charges#the-payment-source-object
-    'threeDSecure' => false, // 3D Secure Enrolled
-    'returnUrl' => 'http://your_website.com/redirect_url' // the URL to redirect to after proccessing payment offsite
+    'amount' => 1, // Required
+    'currency' => 'KWD',  // Optional, Default is USD
+    'customerName' => 'Test', // Optional, Default is Test
+    'customerEmail' => 'test@test.com', // Optional, Default is Test
+    'sourceId' => 'src_all',  //  Optional, Default is src_all @see https://developers.tap.company/reference/charges#the-payment-source-object
+    'threeDSecure' => false, // Optional, Default is true
+    'returnUrl' => 'http://your_website.com/redirect_url' // Required
 ])
 ->send();
 

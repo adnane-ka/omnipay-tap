@@ -14,7 +14,25 @@ abstract class AbstractResponse extends \Omnipay\Common\Message\AbstractResponse
      * @return string
     */
     public function getMessage(){
-        return "Error: ".$this->getRawResponse()['errors'][0]['code'].': '.$this->getRawResponse()['errors'][0]['description'];
+        $response = $this->getRawResponse();
+
+        if (isset($response['error'])) {
+            return sprintf(
+                'Error: %s: %s',
+                $response['error']['code'],
+                $response['error']['description']
+            );
+        }
+    
+        if (isset($response['errors'][0])) {
+            return sprintf(
+                'Error: %s: %s',
+                $response['errors'][0]['code'],
+                $response['errors'][0]['description']
+            );
+        }
+    
+        return 'Error';
     }
 
     /**

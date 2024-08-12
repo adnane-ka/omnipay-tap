@@ -41,18 +41,18 @@ class CreateChargeRequest extends AbstractRequest{
     */
     public function getData()
     {
-        $this->validate('amount', 'currency', 'customerName', 'customerEmail', 'sourceId', 'returnUrl', 'threeDSecure');
+        $this->validate('amount', 'returnUrl');
         
         return [
             'amount' => $this->getParameter('amount'),
-            'currency' => $this->getParameter('currency'),
-            'threeDSecure' => $this->getParameter('threeDSecure'),
+            'currency' => $this->getParameter('currency') ?? 'USD',
+            'threeDSecure' => $this->getParameter('threeDSecure') ?? true, 
             'customer' => [
-                'email' => $this->getParameter('customerEmail'),
-                'first_name' => $this->getParameter('customerName')
+                'email' => $this->getParameter('customerEmail') ?? 'test@tes.co',
+                'first_name' => $this->getParameter('customerName') ?? 'Test'
             ],
             'source' => [
-                'id' => $this->getParameter('sourceId')
+                'id' => $this->getParameter('sourceId') ?? 'src_all'
             ],
             'redirect' => [
                 'url' => $this->getParameter('returnUrl')
