@@ -1,0 +1,40 @@
+{
+    "name": "adnane-ka/omnipay-tap",
+    "description": "Tap payments gateway for Omnipay payment processing library",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+      "omnipay",
+      "tap",
+      "payment",
+      "gateway",
+      "integration"
+    ],
+    "autoload": {
+        "psr-4": {
+            "Omnipay\\Tap\\": "src/",
+            "Omnipay\\Tap\\Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Adnane Kadri",
+            "email": "dannykadri0@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "omnipay/common": "^3.3",
+        "symfony/http-client": "7.2.x-dev",
+        "php-http/httplug": "2.x-dev",
+        "nyholm/psr7": "^1.8@dev",
+        "php-http/curl-client": "2.x-dev",
+        "guzzlehttp/psr7": "3.0.x-dev",
+        "php-http/message": "1.x-dev"
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": false
+        }
+    }
+}
