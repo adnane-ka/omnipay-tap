@@ -11,7 +11,9 @@
 processing library for PHP 5.3+. This package implements Tap support for Omnipay.
 
 ## Installation
-
+```shell
+composer require adnane-ka/omnipay-tap
+```
 ## Basic Usage
 
 The following gateways are provided by this package:
@@ -31,8 +33,8 @@ use Omnipay\Omnipay;
 $gateway = Omnipay::create('Tap');
 
 /**
- * You can use the testing API key provided by Tap
- * No worries on switching test & live mode since Tap provide 
+ * You can use the testing API key provided by Tap.
+ * No worries on switching test & live mode since Tap provides 
  * Keys for both, and can distinguish between them
  * 
  * @see https://developers.tap.company/reference/api-endpoint
