@@ -67,7 +67,10 @@ if ($response->isRedirect()) {
 ```
 ### Retrieving a charge
 ```php
-$response = $gateway->completePurchase(['charge_id' => 'TYPE_IN_THE_TARGET_CHARGE_ID'])->send();
+$response = $gateway->completePurchase([
+    // tap_id is usually injected as a URL param when returned from gateway
+    'tap_id' => 'TYPE_IN_THE_TARGET_CHARGE_ID'
+])->send();
 
 if($response->isSuccessful()){
     // Payment was successful and charge was captured
