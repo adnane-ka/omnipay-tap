@@ -3,9 +3,9 @@
 
 **Tap payments gateway for Omnipay payment processing library**
 
-[![Build Status](https://travis-ci.org/thephpleague/omnipay-manual.png?branch=master)](https://travis-ci.org/thephpleague/omnipay-manual)
-[![Latest Stable Version](https://poser.pugx.org/omnipay/manual/version.png)](https://packagist.org/packages/omnipay/manual)
-[![Total Downloads](https://poser.pugx.org/omnipay/manual/d/total.png)](https://packagist.org/packages/omnipay/manual)
+[![Build Status](https://img.shields.io/travis/com/adnane-ka/omnipay-tap.svg?style=flat-square)](https://travis-ci.com/adnane-ka/omnipay-tap)
+[![Latest Stable Version](https://img.shields.io/packagist/v/adnane-ka/omnipay-tap.svg?style=flat-square)](https://packagist.org/packages/adnane-ka/omnipay-tap)
+[![Total Downloads](https://img.shields.io/packagist/dt/adnane-ka/omnipay-tap.svg?style=flat-square)](https://packagist.org/packages/adnane-ka/omnipay-tap)
 
 [Omnipay](https://github.com/thephpleague/omnipay) is a framework agnostic, multi-gateway payment
 processing library for PHP 5.3+. This package implements Tap support for Omnipay.
