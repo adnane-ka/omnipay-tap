@@ -15,10 +15,11 @@ processing library for PHP 5.3+. This package implements Tap support for Omnipay
 composer require adnane-ka/omnipay-tap
 ```
 ## Basic Usage
-
 The following gateways are provided by this package:
 
 * Tap
+
+This package ineteracts with [tap's Charges API](https://developers.tap.company/reference/charges). 
 
 For general usage instructions, please see the main [Omnipay](https://github.com/thephpleague/omnipay)
 repository.
@@ -49,9 +50,9 @@ $response = $gateway->purchase([
     'currency' => 'KWD', 
     'customerName' => 'Test',
     'customerEmail' => 'test@test.com',
-    'sourceId' => 'src_all', // src_card, src_all, src_kw.knet
+    'sourceId' => 'src_all',  //  alowed source IDs: @see https://developers.tap.company/reference/charges#the-payment-source-object
     'threeDSecure' => false, // 3D Secure Enrolled
-    'returnUrl' => 'http://your_website.com/redirect_url' // the URL to redirect to after proccessing payment
+    'returnUrl' => 'http://your_website.com/redirect_url' // the URL to redirect to after proccessing payment offsite
 ])
 ->send();
 
@@ -67,10 +68,10 @@ if ($response->isRedirect()) {
 ### Create a charge
 
 ```php
-$response = $gateway->completePurchase(['charge_id' => $chargeID])->send();
+$response = $gateway->completePurchase(['charge_id' => 'TYPE_IN_THE_TARGET_CHARGE_ID'])->send();
 
 if($response->isSuccessful()){
-    // Payment was successful and charge was capture
+    // Payment was successful and charge was captured
     // $response->getData()
     // $response->getTransactionReference() // payment reference
 }else{
