@@ -19,7 +19,7 @@ The following gateways are provided by this package:
 
 * Tap
 
-This package ineteracts with [tap's Charges API](https://developers.tap.company/reference/charges). 
+This package ineteracts with [Tap's Charges API](https://developers.tap.company/reference/charges). 
 
 For general usage instructions, please see the main [Omnipay](https://github.com/thephpleague/omnipay)
 repository.
@@ -43,7 +43,7 @@ $gateway = Omnipay::create('Tap');
 */
 $gateway->setApiToken('sk_test_XKokBfNWv6FIYuTMg5sLPjhJ'); 
 ```
-### Create a charge
+### Creating a charge
 ```php
 $response = $gateway->purchase([
     'amount' => 1,
@@ -65,8 +65,7 @@ if ($response->isRedirect()) {
     echo $response->getMessage();
 }
 ```
-### Create a charge
-
+### Retrieving a charge
 ```php
 $response = $gateway->completePurchase(['charge_id' => 'TYPE_IN_THE_TARGET_CHARGE_ID'])->send();
 
